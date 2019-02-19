@@ -5,17 +5,17 @@ services:
   metaquery-db:
     container_name: metaquery-db
     image: library/postgres
-    ports:
-      - "5432:5432"
+    expose:
+      - "5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
     restart: always  
-  # Metaquery server exposed on port 8080
+  # Metaquery server mapped on port 8080
   metaquery:
     container_name: metaquery
-    image: pcorbel/metaquery:v0.1.0
+    image: pcorbel/metaquery
     ports:
       - "8080:8080"
     environment:

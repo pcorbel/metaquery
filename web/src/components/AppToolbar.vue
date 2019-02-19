@@ -1,6 +1,6 @@
 <template>
   <v-toolbar color="primary" fixed dark app>
-    <v-toolbar-title class="ml-0 pl-3"> Metaquery </v-toolbar-title>
+    <v-toolbar-title class="ml-0 pl-3"> MetaQuery </v-toolbar-title>
     <v-spacer />
     <v-autocomplete
       v-model="model"

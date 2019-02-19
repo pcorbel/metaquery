@@ -1,7 +1,7 @@
 {
   "name": "metaquery",
   "version": "1.0.0",
-  "description": "A Vue Material Interface for metaquery API",
+  "description": "A Vue Material Interface for the MetaQuery API",
   "author": "Pierre CORBEL <pierrot.corbel@gmail.com>",
   "private": true,
   "scripts": {

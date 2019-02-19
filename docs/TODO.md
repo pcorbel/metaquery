@@ -17,3 +17,4 @@
 * Filter by label and not by dataset name
 * Add a graph based on level project -> dataset -> table -> field
 * Add a graph per table with parent tables and child tables
+* New icon
