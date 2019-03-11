@@ -101,17 +101,3 @@ To build frontend, execute:
 The storage is based on:
 * [Postgres](https://github.com/postgres/postgres) to store data
 * [gorm](https://github.com/jinzhu/gorm) to serve as an interface between backend and storage
-  
----
-
-# API
-
-API documentation is available with the help of [swagger](https://github.com/swagger-api/swagger-core)
-
-`<server>/swagger/index.html`
-
-To generate doc, we use [swaggo](https://github.com/swaggo/echo-swagger)
-
-To update doc, run 
-```swag init```
-

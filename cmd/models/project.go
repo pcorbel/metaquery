@@ -1,10 +1,7 @@
 package models
 
 import (
-	"fmt"
 	"time"
-
-	"github.com/jinzhu/gorm"
 )
 
 // Project is a struct containing Project stats
@@ -20,16 +17,4 @@ type Project struct {
 	ByteCount               int64     `json:"byte_count" example:"100000"`
 	LatestPartition         time.Time `json:"latest_partition" example:"2000-01-01T00:00:00.000Z"`
 	LatestPartitionRowCount int64     `json:"latest_partition_row_count" example:"1000000"`
-}
-
-// AfterCreate hook call to fire up a creation event
-func (project *Project) AfterCreate(db *gorm.DB) {
-	event := Event{
-		FullID:  project.FullID,
-		Type:    "project",
-		Message: fmt.Sprintf("The project %s has been created", project.FullID),
-		Before:  fmt.Sprintf("%+v", nil),
-		After:   fmt.Sprintf("%+v", project),
-	}
-	db.Save(&event)
 }

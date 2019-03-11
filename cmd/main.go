@@ -23,9 +23,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 
-	_ "github.com/pcorbel/metaquery/cmd/docs"
 	"github.com/robfig/cron"
-	echoSwagger "github.com/swaggo/echo-swagger"
 )
 
 var (
@@ -111,13 +109,8 @@ func main() {
 	v1.GET("/projects/:project/datasets/:dataset/tables/:table/partitions", handlers.GetAllPartitions(db))
 	v1.GET("/projects/:project/datasets/:dataset/tables/:table/fields", handlers.GetAllFields(db))
 
-	e.GET("/swagger/*", echoSwagger.WrapHandler)
-
 	// Entries endpoint
 	v1.GET("/entries", handlers.GetAllEntries(dbOperator))
-
-	// Events endpoint
-	v1.GET("/events", handlers.GetAllEvents(db))
 
 	// Manual ops endpoint
 	v1.POST("/drop", handlers.Drop(dbOperator))

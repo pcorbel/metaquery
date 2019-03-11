@@ -1,8 +1,8 @@
 ---
 # BigQuery related configs
 project: happn-analytics
-datasets:
-  - datamart
+labels:
+  - metaquery
 max_client_concurrency: 3
 
 # DB related configs

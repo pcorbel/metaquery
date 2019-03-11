@@ -1,10 +1,7 @@
 package models
 
 import (
-	"fmt"
 	"time"
-
-	"github.com/jinzhu/gorm"
 )
 
 // Field is a struct containing Field data
@@ -17,17 +14,4 @@ type Field struct {
 	Mode         string    `json:"mode" example:"NULLABLE"`
 	Description  string    `json:"description" example:"This is my awesome field"`
 	ColumnNumber int       `json:"-"`
-}
-
-// AfterCreate hook call to fire up a creation event
-func (field *Field) AfterCreate(db *gorm.DB) {
-	FullID := fmt.Sprintf("%s.%s", field.TableFullID, field.Name)
-	event := Event{
-		FullID:  FullID,
-		Type:    "field",
-		Message: fmt.Sprintf("The field %s has been created", FullID),
-		Before:  fmt.Sprintf("%+v", nil),
-		After:   fmt.Sprintf("%+v", field),
-	}
-	db.Save(&event)
 }

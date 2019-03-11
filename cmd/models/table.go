@@ -1,10 +1,8 @@
 package models
 
 import (
-	"fmt"
 	"time"
 
-	"github.com/jinzhu/gorm"
 	"github.com/lib/pq"
 )
 
@@ -27,16 +25,4 @@ type Table struct {
 	Labels                  pq.StringArray `json:"labels" gorm:"type:text[]" example:"[key:value]"`
 	LatestPartition         time.Time      `json:"latest_partition" example:"2000-01-01T00:00:00.000Z"`
 	LatestPartitionRowCount int64          `json:"latest_partition_row_count" example:"1000000"`
-}
-
-// AfterCreate hook call to fire up a creation event
-func (table *Table) AfterCreate(db *gorm.DB) {
-	event := Event{
-		FullID:  table.FullID,
-		Type:    "table",
-		Message: fmt.Sprintf("The table %s has been created", table.FullID),
-		Before:  fmt.Sprintf("%+v", nil),
-		After:   fmt.Sprintf("%+v", table),
-	}
-	db.Save(&event)
 }

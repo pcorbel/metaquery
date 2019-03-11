@@ -40,7 +40,6 @@ func (op *DBOperator) MigrateDB() {
 	op.DB.AutoMigrate(&Table{})
 	op.DB.AutoMigrate(&Field{})
 	op.DB.AutoMigrate(&Partition{})
-	op.DB.AutoMigrate(&Event{})
 }
 
 // DropDB drop the underlying tables if they exist
@@ -52,6 +51,5 @@ func (op *DBOperator) DropDB() {
 		op.DB.DropTableIfExists(&Table{})
 		op.DB.DropTableIfExists(&Field{})
 		op.DB.DropTableIfExists(&Partition{})
-		op.DB.DropTableIfExists(&Event{})
 	}
 }
