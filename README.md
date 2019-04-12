@@ -3,7 +3,6 @@
 An API to analyze BigQuery metadata
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GitHub release](https://img.shields.io/github/release/pcorbel/metaquery.svg)](https://github.com/pcorbel/metaquery/releases)
 [![GoDoc](https://godoc.org/github.com/pcorbel/metaquery?status.svg)](https://godoc.org/github.com/pcorbel/metaquery)
 
 ![screenshot_project](docs/screenshot.png)

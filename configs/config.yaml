@@ -1,8 +1,11 @@
 ---
 # BigQuery related configs
-project: happn-analytics
-labels:
-  - metaquery
+project: bigquery-public-data
+datasets:
+  - hacker_news
+  - noaa_gsod
+  - samples
+  - usa_names
 max_client_concurrency: 3
 
 # DB related configs
@@ -14,4 +17,4 @@ db_reset: false
 log_level: info
 server_port: 8080
 web_directory: /app/web/dist
-cron_refresh: "0 0 8 * * *" # Documentation available here https://godoc.org/github.com/robfig/cron
+cron_refresh: "0 0 8 * * *"
