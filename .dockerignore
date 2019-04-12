@@ -1,0 +1,13 @@
+.DS_Store
+web/dist
+web/node_modules
+.git
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.history
